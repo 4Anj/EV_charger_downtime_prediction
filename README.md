@@ -100,7 +100,7 @@ uvicorn main:app --reload
 ```
 
 ### API documentation will be available at:
-http://localhost:8000/docs
+https://ev-charger-downtime-prediction.onrender.com/docs
 
 ### Frontend Setup
 

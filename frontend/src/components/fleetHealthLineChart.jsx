@@ -59,12 +59,12 @@ export default function FleetHealthLineChart() {
   React.useEffect(() => {
     async function fetchFleet() {
       try {
-        const res = await fetch("http://localhost:8000/chargers/live");
+        const res = await fetch("https://ev-charger-downtime-prediction.onrender.com/chargers/live");
         const live = await res.json();
 
         const histories = await Promise.all(
           live.map((c) =>
-            fetch(`http://localhost:8000/chargers/${c.charger_id}`).then((r) =>
+            fetch(`https://ev-charger-downtime-prediction.onrender.com/chargers/${c.charger_id}`).then((r) =>
               r.json(),
             ),
           ),

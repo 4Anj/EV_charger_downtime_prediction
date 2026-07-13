@@ -31,7 +31,7 @@ export default function ChargerDashboard() {
 
     async function fetchCharger() {
       try {
-        const res = await fetch(`http://localhost:8000/chargers/${chargerId}`);
+        const res = await fetch(`https://ev-charger-downtime-prediction.onrender.com/chargers/${chargerId}`);
         if (!res.ok) throw new Error();
         setCharger(await res.json());
       } catch {

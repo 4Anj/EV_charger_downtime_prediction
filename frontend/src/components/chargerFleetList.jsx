@@ -13,7 +13,7 @@ export default function ChargerFleetList({ onSelect, activeCharger }) {
 
   async function fetchChargers() {
     try {
-      const res = await fetch("http://localhost:8000/chargers/live");
+      const res = await fetch("https://ev-charger-downtime-prediction.onrender.com/chargers/live");
       const data = await res.json();
 
       if (!Array.isArray(data)) {

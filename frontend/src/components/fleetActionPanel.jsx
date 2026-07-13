@@ -8,7 +8,7 @@ export default function FleetActionPanel() {
   useEffect(() => {
     async function checkAlerts() {
       try {
-        const res = await fetch("http://localhost:8000/fleet/summary");
+        const res = await fetch("https://ev-charger-downtime-prediction.onrender.com/fleet/summary");
         const data = await res.json();
 
         const atRisk = data.high + data.medium;
@@ -30,7 +30,7 @@ export default function FleetActionPanel() {
 
   async function downloadLogs() {
     try {
-      const res = await fetch("http://localhost:8000/fleet/logs");
+      const res = await fetch("https://ev-charger-downtime-prediction.onrender.com/fleet/logs");
       const data = await res.json();
 
       const blob = new Blob([JSON.stringify(data, null, 2)], {

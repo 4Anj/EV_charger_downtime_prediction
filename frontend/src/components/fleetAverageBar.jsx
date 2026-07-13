@@ -9,7 +9,7 @@ export default function FleetAveragesBar() {
     async function fetchAverages() {
       try {
         // Step 1: get charger IDs
-        const res = await fetch("http://localhost:8000/chargers/live");
+        const res = await fetch("https://ev-charger-downtime-prediction.onrender.com/chargers/live");
         const chargers = await res.json();
 
         if (chargers.length === 0) return;
@@ -17,7 +17,7 @@ export default function FleetAveragesBar() {
         // Step 2: fetch full charger data
         const fullData = await Promise.all(
           chargers.map((c) =>
-            fetch(`http://localhost:8000/chargers/${c.charger_id}`).then((r) =>
+            fetch(`https://ev-charger-downtime-prediction.onrender.com/chargers/${c.charger_id}`).then((r) =>
               r.json(),
             ),
           ),

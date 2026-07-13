@@ -12,7 +12,7 @@ export default function ChargerControlBar() {
       return;
     }
 
-    const res = await fetch("http://localhost:8000/chargers", {
+    const res = await fetch("https://ev-charger-downtime-prediction.onrender.com/chargers", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ charger_id: chargerId }),
@@ -36,7 +36,7 @@ export default function ChargerControlBar() {
     }
 
     const res = await fetch(
-      `http://localhost:8000/chargers/exists/${chargerId}`,
+      `https://ev-charger-downtime-prediction.onrender.com/chargers/exists/${chargerId}`,
     );
     const data = await res.json();
 

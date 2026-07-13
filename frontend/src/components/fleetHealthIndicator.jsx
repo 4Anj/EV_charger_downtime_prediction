@@ -7,7 +7,7 @@ export default function FleetHealthIndicator() {
 
   useEffect(() => {
     async function fetchSummary() {
-      const res = await fetch("http://localhost:8000/fleet/summary");
+      const res = await fetch("https://ev-charger-downtime-prediction.onrender.com/fleet/summary");
       const json = await res.json();
       setSummary(json);
     }

@@ -9,7 +9,7 @@ export default function FleetSummaryCard() {
   useEffect(() => {
     async function fetchSummary() {
       try {
-        const res = await fetch("http://localhost:8000/fleet/summary");
+        const res = await fetch("https://ev-charger-downtime-prediction.onrender.com/fleet/summary");
         const data = await res.json();
         setSummary(data);
       } catch (err) {
