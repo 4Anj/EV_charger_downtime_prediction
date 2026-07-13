@@ -81,7 +81,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://ev-monitoring-frontend.onrender.com",
+        "https://ev-charger-downtime-prediction-1.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
